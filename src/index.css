@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #3366FF;
+  --color-primary-dark: #2952cc;
+  --color-secondary: #33CC99;
+  --color-secondary-dark: #29a37a;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white font-medium rounded-md 
+           hover:bg-primary-dark focus:outline-none focus:ring-2 
+           focus:ring-primary focus:ring-opacity-50 
+           transform transition-all duration-300
+           hover:translate-y-[-2px] hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-primary font-medium rounded-md border border-primary
+           hover:bg-gray-50 focus:outline-none focus:ring-2 
+           focus:ring-primary focus:ring-opacity-50 
+           transform transition-all duration-300
+           hover:translate-y-[-2px];
+  }
+  
+  .btn-white {
+    @apply px-6 py-3 bg-white text-primary font-medium rounded-md
+           hover:bg-gray-100 focus:outline-none focus:ring-2 
+           focus:ring-white focus:ring-opacity-50 
+           transform transition-all duration-300;
+  }
+  
+  .btn-white-outline {
+    @apply px-6 py-3 bg-transparent text-white font-medium rounded-md border border-white
+           hover:bg-white/10 focus:outline-none focus:ring-2 
+           focus:ring-white focus:ring-opacity-50 
+           transform transition-all duration-300;
+  }
+}
+
+/* Core styles */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
