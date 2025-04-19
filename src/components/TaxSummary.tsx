@@ -15,15 +15,15 @@ const TaxSummary: React.FC = () => {
   const navigate = useNavigate();
   // This would normally come from a global state management solution
   const [summaryData] = useState<SummaryData>({
-    totalIncome: 25000,
-    estimatedRefund: 1500,
+    totalIncome: 20301,
+    estimatedRefund: 4300,
     isRefund: true,
     deductions: [
       { name: 'Student Loan Interest', amount: 2500 },
       { name: 'Charitable Contributions', amount: 500 }
     ],
     credits: [
-      { name: 'American Opportunity Credit', amount: 2500 },
+      { name: 'American Opportunity Credit', amount: 1000 },
       { name: 'Lifetime Learning Credit', amount: 0 }
     ],
     filingType: 'Resident'

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import AIImage from './picture/AIimage.png';
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <img 
-              src="https://images.pexels.com/photos/6347888/pexels-photo-6347888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src={AIImage}
               alt="Student working on taxes" 
               className="w-full max-w-lg rounded-lg shadow-xl transform translate-y-4 hover:translate-y-0 transition-transform duration-500"
             />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ArrowLeft, Upload, X } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Upload, X, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface FormData {
@@ -67,9 +67,19 @@ const EducationCredits: React.FC = () => {
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Did you pay out-of-pocket tuition or fees in 2024?
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Did you pay out-of-pocket tuition or fees in 2024?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-llc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <input
@@ -100,9 +110,19 @@ const EducationCredits: React.FC = () => {
                         </div>
                         
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Upload Form 1098-T (optional)
-                          </label>
+                          <div className="flex items-center justify-between mb-2">
+                            <label className="block text-sm font-medium text-gray-700">
+                              Upload Form 1098-T (optional)
+                            </label>
+                            <a 
+                              href="https://www.irs.gov/forms-pubs/about-form-1098-t"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:text-primary-dark flex items-center text-sm"
+                            >
+                              About 1098-T <ExternalLink className="h-4 w-4 ml-1" />
+                            </a>
+                          </div>
                           <div className="flex items-center space-x-4">
                             <label className="flex items-center px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50">
                               <Upload className="h-5 w-5 mr-2 text-gray-500" />
@@ -138,9 +158,19 @@ const EducationCredits: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Did you buy books, supplies, or course materials required for class?
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Did you buy books, supplies, or course materials required for class?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/publications/p970#en_US_2022_publink1000300227"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <input
@@ -171,9 +201,19 @@ const EducationCredits: React.FC = () => {
                         </div>
                         
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Upload Receipts (optional)
-                          </label>
+                          <div className="flex items-center justify-between mb-2">
+                            <label className="block text-sm font-medium text-gray-700">
+                              Upload Receipts (optional)
+                            </label>
+                            <a 
+                              href="https://www.irs.gov/publications/p970#en_US_2022_publink1000178583"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:text-primary-dark flex items-center text-sm"
+                            >
+                              Required Records <ExternalLink className="h-4 w-4 ml-1" />
+                            </a>
+                          </div>
                           <div className="flex items-center space-x-4">
                             <label className="flex items-center px-4 py-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50">
                               <Upload className="h-5 w-5 mr-2 text-gray-500" />
@@ -209,9 +249,19 @@ const EducationCredits: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Do you want us to check for American Opportunity Credit or Lifetime Learning Credit eligibility?
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Do you want us to check for American Opportunity Credit or Lifetime Learning Credit eligibility?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/credits-deductions/compare-education-credits"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      Compare Credits <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                   <div className="flex items-center space-x-4">
                     <input
                       type="checkbox"
