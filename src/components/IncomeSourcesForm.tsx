@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ArrowLeft, Upload, X } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Upload, X, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface IncomeSource {
@@ -67,7 +67,17 @@ const IncomeSourcesForm: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* W-2 Income */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">W-2 Income</h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-900">W-2 Income</h2>
+                <a 
+                  href="https://www.irs.gov/forms-pubs/about-form-w-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-dark flex items-center text-sm"
+                >
+                  About W-2 <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+              </div>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -114,7 +124,17 @@ const IncomeSourcesForm: React.FC = () => {
 
             {/* Freelance/1099 Income */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Freelance/1099 Income</h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-900">Freelance/1099 Income</h2>
+                <a 
+                  href="https://www.irs.gov/forms-pubs/about-form-1099-misc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-dark flex items-center text-sm"
+                >
+                  About 1099 <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+              </div>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -161,7 +181,17 @@ const IncomeSourcesForm: React.FC = () => {
 
             {/* Scholarship Income */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Scholarship Income</h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-900">Scholarship Income</h2>
+                <a 
+                  href="https://www.irs.gov/taxtopics/tc421"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-dark flex items-center text-sm"
+                >
+                  About Scholarships <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+              </div>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -208,7 +238,17 @@ const IncomeSourcesForm: React.FC = () => {
 
             {/* Other Income */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Other Income</h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-900">Other Income</h2>
+                <a 
+                  href="https://www.irs.gov/publications/p525"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-dark flex items-center text-sm"
+                >
+                  About Other Income <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+              </div>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">

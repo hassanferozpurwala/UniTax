@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ArrowLeft, Upload, X } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Upload, X, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface FormData {
@@ -7,7 +7,9 @@ interface FormData {
   loanInterestAmount: string;
   form1098E: File[];
   hasRetirement: boolean;
+  retirementAmount: string;
   hasHealthcare: boolean;
+  healthcareAmount: string;
   hasCharity: boolean;
   charityAmount: string;
 }
@@ -19,7 +21,9 @@ const Deductions: React.FC = () => {
     loanInterestAmount: '',
     form1098E: [],
     hasRetirement: false,
+    retirementAmount: '',
     hasHealthcare: false,
+    healthcareAmount: '',
     hasCharity: false,
     charityAmount: ''
   });
@@ -66,9 +70,19 @@ const Deductions: React.FC = () => {
               <div className="space-y-6">
                 {/* Student Loan Interest */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Did you pay any student loan interest in 2024?
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Did you pay any student loan interest in 2024?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/publications/p970#en_US_2022_publink1000178272"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <input
@@ -138,45 +152,111 @@ const Deductions: React.FC = () => {
 
                 {/* Retirement Contributions */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Did you contribute to an IRA or retirement account?
-                  </label>
-                  <div className="flex items-center space-x-4">
-                    <input
-                      type="checkbox"
-                      id="hasRetirement"
-                      name="hasRetirement"
-                      checked={formData.hasRetirement}
-                      onChange={handleInputChange}
-                      className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                    />
-                    <label htmlFor="hasRetirement" className="text-sm text-gray-700">Yes</label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Did you contribute to an IRA or retirement account?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-tax-on-ira-contributions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <input
+                        type="checkbox"
+                        id="hasRetirement"
+                        name="hasRetirement"
+                        checked={formData.hasRetirement}
+                        onChange={handleInputChange}
+                        className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                      />
+                      <label htmlFor="hasRetirement" className="text-sm text-gray-700">Yes</label>
+                    </div>
+                    
+                    {formData.hasRetirement && (
+                      <div className="pl-8">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Contribution Amount
+                        </label>
+                        <input
+                          type="number"
+                          name="retirementAmount"
+                          value={formData.retirementAmount}
+                          onChange={handleInputChange}
+                          placeholder="Enter amount"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 {/* Healthcare Expenses */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Any healthcare expenses or insurance premiums paid out-of-pocket?
-                  </label>
-                  <div className="flex items-center space-x-4">
-                    <input
-                      type="checkbox"
-                      id="hasHealthcare"
-                      name="hasHealthcare"
-                      checked={formData.hasHealthcare}
-                      onChange={handleInputChange}
-                      className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                    />
-                    <label htmlFor="hasHealthcare" className="text-sm text-gray-700">Yes</label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Any healthcare expenses or insurance premiums paid out-of-pocket?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/taxtopics/tc502"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <input
+                        type="checkbox"
+                        id="hasHealthcare"
+                        name="hasHealthcare"
+                        checked={formData.hasHealthcare}
+                        onChange={handleInputChange}
+                        className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                      />
+                      <label htmlFor="hasHealthcare" className="text-sm text-gray-700">Yes</label>
+                    </div>
+                    
+                    {formData.hasHealthcare && (
+                      <div className="pl-8">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Total Healthcare Expenses
+                        </label>
+                        <input
+                          type="number"
+                          name="healthcareAmount"
+                          value={formData.healthcareAmount}
+                          onChange={handleInputChange}
+                          placeholder="Enter amount"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 {/* Charitable Donations */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Any charitable donations?
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Any charitable donations?
+                    </label>
+                    <a 
+                      href="https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-dark flex items-center text-sm"
+                    >
+                      IRS Info <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <input
