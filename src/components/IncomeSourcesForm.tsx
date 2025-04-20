@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ArrowLeft, Upload, X, ExternalLink, AlertCircle, CheckCircle } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Upload, X, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
